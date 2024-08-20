@@ -1,42 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PXI Fusion</title>
-  <link rel="stylesheet" href="popup.css">
-  <script src="popup.js" defer></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      width: 300px;
+      background-color: #f0f0f0;
+      color: #333;
+      padding: 10px;
+    }
+    .button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+    .code-box {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      white-space: pre-wrap;
+    }
+  </style>
 </head>
 <body>
   <h1>PXI Fusion</h1>
-  <button id="open-prodigy">Open Prodigy</button>
-  <h2>Instructions</h2>
-  <div id="console-instructions">
-    <p>To use the PXI Fusion Cheat Menu:</p>
-    <ol>
-      <li>Open the console in your browser (Press F12 or Ctrl+Shift+I, then go to the Console tab).</li>
-      <li>Paste the code below and press Enter:</li>
-    </ol>
-    <pre id="code-box">
-(function() {
-    const scriptUrl = "https://raw.githubusercontent.com/DragonProdHax/PXI/main/PXI%20Fusion";
-    fetch(scriptUrl)
+  <button class="button" id="openPro">Open Prodigy</button>
+  <h2>Console Version</h2>
+  <p>To use the PXI Fusion Cheat Menu via console:</p>
+  <ul>
+    <li>Open the console in your browser (usually with F12 or right-click and select "Inspect" then go to "Console").</li>
+    <li>Paste the following code into the console:</li>
+  </ul>
+  <div class="code-box" id="consoleCode">
+    javascript:(function() {
+      const scriptUrl = "https://raw.githubusercontent.com/DragonProdHax/PXI/main/PXI%20Fusion";
+      fetch(scriptUrl)
         .then(response => response.text())
         .then(code => {
-            eval(code);
+          eval(code);
         })
         .catch(error => console.error("Failed to load the script:", error));
-})();
-    </pre>
-    <button id="copy-code">Copy Code</button>
-    <h2>Bookmark Version</h2>
-    <p>Drag the bookmark below to your bookmarks bar:</p>
-    <pre id="bookmark-code">
-javascript:(function()%7Bconst%20scriptUrl%20%3D%20%22https%3A%2F%2Fraw.githubusercontent.com%2FDragonProdHax%2FPXI%2Fmain%2FPXI%2520Fusion%22%3Bfetch(scriptUrl).then(response%20%3D%3E%20response.text()).then(code%20%3D%3E%20eval(code)).catch(error%20%3D%3E%20console.error(%22Failed%20to%20load%20the%20script%3A%22%2C%20error))%3B%7D)()%3B
-    </pre>
-    <button id="copy-bookmark">Copy Bookmark Code</button>
-    <h2>Links</h2>
-    <button id="discord-link"><img src="icons/dis.png" alt="Discord" /> Discord</button>
-    <button id="youtube-link"><img src="icons/yt.png" alt="YouTube" /> YouTube</button>
-  </body>
+    })();
+  </div>
+  <button class="button" id="copyCode">Copy Code</button>
+  <h2>Bookmark Version</h2>
+  <p>Drag the following link to your bookmarks bar:</p>
+  <a href="javascript:(function() {const scriptUrl = 'https://raw.githubusercontent.com/DragonProdHax/PXI/main/PXI%20Fusion';fetch(scriptUrl).then(response => response.text()).then(code => {eval(code);}).catch(error => console.error('Failed to load the script:', error));})();" class="button">PXI Fusion Bookmarklet</a>
+  <h2>Links</h2>
+  <a href="https://discord.gg/VAkGbXKwhY" target="_blank">
+    <img src="icons/dis.png" alt="Discord" width="24" height="24">
+  </a>
+  <a href="https://www.youtube.com/@PXIFusionX" target="_blank">
+    <img src="icons/yt.png" alt="YouTube" width="24" height="24">
+  </a>
+  <script>
+    document.getElementById('copyCode').addEventListener('click', () => {
+      const code = document.getElementById('consoleCode').textContent;
+      navigator.clipboard.writeText(code).then(() => {
+        alert('Bookmark code copied to clipboard!');
+      });
+    });
+    document.getElementById('openPro').addEventListener('click', () => {
+      window.open('https://math.prodigygame.com/?launcher=true&code=*', '_blank');
+    });
+  </script>
+</body>
 </html>

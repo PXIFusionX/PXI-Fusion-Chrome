@@ -38,9 +38,6 @@
         "resources": ["icons/yt.png", "icons/dis.png"],
         "matches": ["<all_urls>"]
       }
-    ],
-    "background": {
-      "service_worker": "background.js"
-    }
+    ]
   }
   
