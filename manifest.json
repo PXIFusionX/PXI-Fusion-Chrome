@@ -6,10 +6,16 @@
     "permissions": [
       "storage",
       "activeTab",
+      "scripting",
       "webRequest",
-      "webRequestBlocking",
-      "http://*/*",
-      "https://*/*"
+      "webRequestBlocking"
+    ],
+    "host_permissions": [
+      "https://math.prodigygame.com/*",
+      "https://cdn.prodigygame.com/*",
+      "https://raw.githubusercontent.com/*",
+      "https://discord.com/*",
+      "https://www.youtube.com/*"
     ],
     "background": {
       "service_worker": "background.js"
@@ -35,6 +41,9 @@
         "resources": ["icons/yt.png", "icons/dis.png"],
         "matches": ["<all_urls>"]
       }
-    ]
+    ],
+    "background": {
+      "service_worker": "background.js"
+    }
   }
   

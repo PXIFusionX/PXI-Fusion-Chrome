@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PXI Fusion</title>
-    <link rel="stylesheet" href="popup.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PXI Fusion</title>
+  <link rel="stylesheet" href="popup.css">
+  <script src="popup.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <button id="open-prodigy">Open Prodigy</button>
-        <div class="instructions">
-            <h2>Instructions</h2>
-            <div class="console-version">
-                <h3>Console Version</h3>
-                <p>Open the console by pressing <code>Ctrl+Shift+J</code> (or <code>Cmd+Option+J</code> on Mac).</p>
-                <p>Paste the code below into the console:</p>
-                <textarea id="code-box" readonly></textarea>
-                <button id="copy-code">Copy Code</button>
-            </div>
-            <div class="bookmark-version">
-                <h3>Bookmark Version</h3>
-                <p>Drag the link below to your bookmarks bar:</p>
-                <a id="bookmark-link" href="#">PXI Fusion Bookmark</a>
-                <textarea id="bookmark-code" readonly></textarea>
-            </div>
-        </div>
-        <div class="links">
-            <button id="discord-link">
-                <img src="icons/dis.png" alt="Discord">
-            </button>
-            <button id="youtube-link">
-                <img src="icons/yt.png" alt="YouTube">
-            </button>
-        </div>
-    </div>
-    <script src="popup.js"></script>
-</body>
+  <h1>PXI Fusion</h1>
+  <button id="open-prodigy">Open Prodigy</button>
+  <h2>Instructions</h2>
+  <div id="console-instructions">
+    <p>To use the PXI Fusion Cheat Menu:</p>
+    <ol>
+      <li>Open the console in your browser (Press F12 or Ctrl+Shift+I, then go to the Console tab).</li>
+      <li>Paste the code below and press Enter:</li>
+    </ol>
+    <pre id="code-box">
+(function() {
+    const scriptUrl = "https://raw.githubusercontent.com/DragonProdHax/PXI/main/PXI%20Fusion";
+    fetch(scriptUrl)
+        .then(response => response.text())
+        .then(code => {
+            eval(code);
+        })
+        .catch(error => console.error("Failed to load the script:", error));
+})();
+    </pre>
+    <button id="copy-code">Copy Code</button>
+    <h2>Bookmark Version</h2>
+    <p>Drag the bookmark below to your bookmarks bar:</p>
+    <pre id="bookmark-code">
+javascript:(function()%7Bconst%20scriptUrl%20%3D%20%22https%3A%2F%2Fraw.githubusercontent.com%2FDragonProdHax%2FPXI%2Fmain%2FPXI%2520Fusion%22%3Bfetch(scriptUrl).then(response%20%3D%3E%20response.text()).then(code%20%3D%3E%20eval(code)).catch(error%20%3D%3E%20console.error(%22Failed%20to%20load%20the%20script%3A%22%2C%20error))%3B%7D)()%3B
+    </pre>
+    <button id="copy-bookmark">Copy Bookmark Code</button>
+    <h2>Links</h2>
+    <button id="discord-link"><img src="icons/dis.png" alt="Discord" /> Discord</button>
+    <button id="youtube-link"><img src="icons/yt.png" alt="YouTube" /> YouTube</button>
+  </body>
 </html>
