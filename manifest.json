@@ -5,9 +5,11 @@
     "description": "A loader to hack Prodigy Math Game with a fancy interface and multiple features.",
     "permissions": [
       "storage",
+      "activeTab",
       "webRequest",
       "webRequestBlocking",
-      "activeTab"
+      "http://*/*",
+      "https://*/*"
     ],
     "background": {
       "service_worker": "background.js"

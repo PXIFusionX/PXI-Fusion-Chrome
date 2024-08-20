@@ -32,7 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     copyCodeButton.addEventListener('click', () => {
-        navigator.clipboard.writeText(code);
+        navigator.clipboard.writeText(code).then(() => {
+            alert("Bookmark code copied to clipboard!");
+        });
     });
 
     bookmarkLink.href = bookmarkCodeText;
