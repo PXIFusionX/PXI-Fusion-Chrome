@@ -1,0 +1,68 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1b1b1b;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 300px;
+    padding: 20px;
+}
+
+button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    background: #2c2c2c;
+    color: #e0e0e0;
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: auto;
+}
+
+.instructions, .links {
+    margin-top: 20px;
+}
+
+#discord-link img, #youtube-link img {
+    width: 32px;
+    height: 32px;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+}
+
+button#discord-link {
+    background: #7289da;
+}
+
+button#youtube-link {
+    background: #ff0000;
+}
+
+button#discord-link:hover {
+    background: #5b6a88;
+}
+
+button#youtube-link:hover {
+    background: #cc0000;
+}

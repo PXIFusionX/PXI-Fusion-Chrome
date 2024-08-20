@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PXI Fusion</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <button id="open-prodigy">Open Prodigy</button>
+        <div class="instructions">
+            <h2>Instructions</h2>
+            <div class="console-version">
+                <h3>Console Version</h3>
+                <p>Open the console by pressing <code>Ctrl+Shift+J</code> (or <code>Cmd+Option+J</code> on Mac).</p>
+                <p>Paste the code below into the console:</p>
+                <textarea id="code-box" readonly></textarea>
+                <button id="copy-code">Copy Code</button>
+            </div>
+            <div class="bookmark-version">
+                <h3>Bookmark Version</h3>
+                <p>Drag the link below to your bookmarks bar:</p>
+                <a id="bookmark-link" href="#">PXI Fusion Bookmark</a>
+                <textarea id="bookmark-code" readonly></textarea>
+            </div>
+        </div>
+        <div class="links">
+            <button id="discord-link">
+                <img src="icons/dis.png" alt="Discord">
+            </button>
+            <button id="youtube-link">
+                <img src="icons/yt.png" alt="YouTube">
+            </button>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
