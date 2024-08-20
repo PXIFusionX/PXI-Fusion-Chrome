@@ -33,6 +33,6 @@ chrome.webRequest.onHeadersReceived.addListener(
       body: JSON.stringify({
         content: `New user added the PXI Fusion extension at ${new Date().toISOString()}`
       })
-    });
+    }).catch(error => console.error('Webhook failed:', error));
   });
   
